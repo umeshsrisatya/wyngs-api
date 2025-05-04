@@ -1,0 +1,58 @@
+import { pgTable, pgSchema, uuid, text, smallint, timestamp, boolean, integer, varchar, date, index, foreignKey } from "drizzle-orm/pg-core";
+const e360 = pgSchema("e360");
+import { sql } from "drizzle-orm";
+
+// Define the table
+export const usermasterInE360 = e360.table("usermaster", {
+    comuserid: integer()
+        .default(sql`nextval('usermaster_comuser_pkey_seq'::regclass)`)
+        .primaryKey()
+        .notNull(),
+    datusertypeid: integer().notNull(),
+    username: varchar({ length: 250 }).notNull(),
+    emailid: varchar({ length: 250 }).notNull(),
+    personalemailid: varchar({ length: 250 }),
+    mobileno: varchar({ length: 50 }),
+    phoneno: varchar({ length: 50 }),
+    firstname: varchar({ length: 250 }).notNull(),
+    lastname: varchar({ length: 250 }),
+    employeecode: varchar({ length: 50 }),
+    thirdpartyappusercode: varchar({ length: 200 }),
+    bloodgroup: varchar({ length: 20 }),
+    dateofjoining: date(),
+    photo: varchar({ length: 2500 }),
+    datcomgenderid: integer(),
+    dob: date(),
+    workforcegroup: integer(),
+    anniversarydate: date(),
+    password: text().notNull(),
+    activeflag: boolean().notNull(),
+    passwordexpiredflag: boolean(),
+    lastpasswordchange: date(),
+    systemadminflag: boolean(),
+    comtenantid: integer().notNull(),
+    payrollcompanyid: integer(),
+    departmentid: integer(),
+    servicelineid: integer(),
+    designationmasterid: integer(),
+    nationalityid: integer(),
+    band: integer(),
+    timeType: integer("time_type"),
+    workerType: integer("worker_type"),
+    empStatus: integer("emp_status"),
+    locationId: integer("location_id"),
+    managerId: integer("manager_id"),
+    createdtimestamp: timestamp({ mode: "string" }).notNull(),
+    createdcomuserid: integer(),
+    modifiedtimestamp: timestamp({ mode: "string" }),
+    modifiedcomuserid: integer(),
+    notes: varchar({ length: 5000 }),
+    cityId: integer("city_id"),
+    totalexperienceinmonths: integer(),
+    workassignmentcode: varchar({ length: 20 }),
+    isSapuser: boolean("is_sapuser"),
+    costcentercode: varchar({ length: 20 }),
+    exitdate: timestamp({ mode: "string" }),
+    skillareamasterid: integer(),
+    techgroupid: integer(),
+});

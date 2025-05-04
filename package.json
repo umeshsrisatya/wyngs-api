@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nitro build",
+    "dev": "nitro dev --host",
+    "prepare": "nitro prepare",
+    "generate": "drizzle-kit generate",
+    "preview": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.31.0",
+    "drizzle-orm": "^0.43.1",
+    "nitropack": "latest",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-auth": "^1.1.15",
+    "better-sqlite3": "^11.9.1",
+    "cors": "^2.8.5",
+    "drizzle-zod": "^0.7.0",
+    "express": "^5.1.0",
+    "fernet-ts": "^1.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "postgres": "^3.4.5",
+    "zod": "^3.24.1"
+  }
+}
