@@ -141,13 +141,3 @@ User (usermaster)
 This relationship map outlines how a user is linked to roles, menus, permissions, modules, and organizational details across tenants.
 
 ---
-
-## 💬 Contact
-
-For questions, suggestions, or contributions, feel free to open an issue on the [GitHub repository](https://github.com/umeshsrisatya/wyngs-api) or reach out to the maintainers directly.
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License**. See [LICENSE.md](LICENSE.md) for details.
