@@ -66,7 +66,7 @@ export default defineEventHandler(async (event) => {
     }
 
     // Check if the password is correct
-    const isMatch = await comparePassword(password, user.password);
+    const isMatch = await comparePassword(password, user.passwordkey);
     if (!isMatch) {
         return { status: "Invalid Password" };
     }
