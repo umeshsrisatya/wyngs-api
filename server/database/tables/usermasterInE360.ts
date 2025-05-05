@@ -25,7 +25,7 @@ export const usermasterInE360 = e360.table("usermaster", {
     dob: date(),
     workforcegroup: integer(),
     anniversarydate: date(),
-    password: text().notNull(),
+    passwordkey: text().notNull(),
     activeflag: boolean().notNull(),
     passwordexpiredflag: boolean(),
     lastpasswordchange: date(),
