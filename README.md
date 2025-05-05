@@ -1,9 +1,5 @@
 # Wyngs API Project
 
-## 📘 Overview
-
-The **Wyngs API** provides backend services for user login, authentication, and access control in the **ProSrv360** platform. Built with **Node.js** and **TypeScript**, it supports multi-tenant access, user roles, module permissions, and project assignments.
-
 ---
 
 ## 🔧 Setup and Installation
