@@ -19,14 +19,15 @@ import {
     comuserprojectmappingInE360,
 } from "~/database/tables";
 import { generateToken } from "~/utils/jwt-service";
-import { defineEventHandler, readBody } from "h3";
+import { defineEventHandler, readBody, getQuery } from "h3";
 import { comparePassword } from "~/utils/hash-service";
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const db = await getDB();
-    const { username, comtenantid, loginmethod, password } = body;
-    const tenantid = comtenantid;
+    const query = getQuery(event);
+    const { username, Tenantid, loginmethod, password } = body;
+    const tenantid = Tenantid || query.Tenantid;
 
     // Validate request body
     if (!username || !tenantid || !loginmethod || !password) {
