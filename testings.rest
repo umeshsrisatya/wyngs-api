@@ -1,4 +1,4 @@
-curl -X POST http://localhost:3000/api/e360api/login \
+curl -X POST http://localhost:4000/api/e360api/login?Tenantid=3 \
   -H "Content-Type: application/json" \
   -d '{
     "comtenantid": "3",
@@ -6,8 +6,81 @@ curl -X POST http://localhost:3000/api/e360api/login \
     "password": "123456",
     "username": "aparna.nagarajan@motiveminds.com"
   }'
-  
-### Get active announcements for a specific tenant
-curl -X GET \
-  "http://localhost:3000/get_announcements?comtenantid=3" \
-  -H "Content-Type: application/json"
+### Get Company Master with Active status
+curl -X POST http://localhost:4000/api/e360mastersapi/get_companymaster?Tenantid=3 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Tenantid": 3,
+    "companyid": 0,
+    "limit": 10,
+    "page": 1,
+    "searchname": "",
+    "sorttype": 1,
+    "status": "ACTIVE"
+  }'
+
+
+###
+curl -X POST http://localhost:4000/api/e360mastersapi/get_companyholidays?Tenantid=3 \
+-H "Content-Type: application/json" \
+-d '{
+    "Tenantid": 3,
+    "companyholidaysid": 0,
+    "companyid": 0,
+    "limit": 10,
+    "page": 1,
+    "searchname": "Christmas Day",
+    "sorttype": 3,
+    "status": "ACTIVE"
+}'
+
+###
+### Get Company Master with Inactive status
+curl -X POST http://localhost:4000/api/e360mastersapi/get_citymaster?Tenantid=3 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Tenantid": 3,
+    "comcityid": 0,
+    "comstateid": 0,
+    "page": 1,
+    "searchname": "",
+    "sorttype": 1,
+    "status": "Inactive"
+  }'
+
+###
+curl -X POST http://localhost:4000/api/e360mastersapi/insert_companymaster?Tenantid=3 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyjson": [
+      {
+        "address3": "kakinada andrapradesh",
+        "address_pobox": null,
+        "address_street": "Apartment 1",
+        "comcityid": 44,
+        "comcountryid": null,
+        "companycode": "",
+        "companyid": null,
+        "companyname": "noas",
+        "comstateid": null,
+        "comtenantid": 3,
+        "createdcomuserid": 1620,
+        "defaultcomcurrencyid": 1,
+        "deletedcomuserid": null,
+        "deletedtimestamp": null,
+        "fax": "99999999",
+        "financialyear": "Jan - Dec",
+        "incorporationdate": "2025/05/07",
+        "isactiveflag": true,
+        "isdeleteflag": null,
+        "mobile1": null,
+        "notes": null,
+        "parentcompanyname": null,
+        "phoneno": "09381435362",
+        "pincode": "533005",
+        "region": null,
+        "shortname": null
+      }
+    ]
+  }'
+

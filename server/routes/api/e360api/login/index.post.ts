@@ -26,6 +26,7 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const db = await getDB();
     const query = getQuery(event);
+
     const { username, Tenantid, loginmethod, password } = body;
     const tenantid = Tenantid || query.Tenantid;
 
