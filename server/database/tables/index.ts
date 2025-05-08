@@ -21,3 +21,20 @@ export * from "./datmodulealiasInE360";
 export * from "./datmoduleInE360";
 export * from "./datmenusInE360";
 export * from "./datmenupermissionInE360";
+
+//company master
+export * from "./citymasterInE360";
+export * from "./statemasterInE360";
+
+//customer
+export * from "./customermasterInE360";
+
+//orgcostrate
+export * from "./orgcostrateInE360";
+
+//documentserialnosetting
+export * from "./documentserialnosettingInE360";
+
+
+//holidays
+export * from "./companyholidaysInE360";
